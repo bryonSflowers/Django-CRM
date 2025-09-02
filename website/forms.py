@@ -35,16 +35,22 @@ class SignUpForm(UserCreationForm):
 
 
 
-# Create Add Record Form
+# Create Add Simulation Form
 class AddRecordForm(forms.ModelForm):
-	first_name = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"First Name", "class":"form-control"}), label="")
-	last_name = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Last Name", "class":"form-control"}), label="")
-	email = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Email", "class":"form-control"}), label="")
-	phone = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Phone", "class":"form-control"}), label="")
-	address = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Address", "class":"form-control"}), label="")
-	city = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"City", "class":"form-control"}), label="")
-	state = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"State", "class":"form-control"}), label="")
-	zipcode = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Zipcode", "class":"form-control"}), label="")
+	simulation_name = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Simulation Name", "class":"form-control"}), label="")
+	weatherfile_name = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Weather File Name", "class":"form-control"}), label="")
+	run_period = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Run Period", "class":"form-control"}), label="")
+	total_cooling_energy = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Total Cooling Energy [kWh]", "class":"form-control"}), label="")
+	peak_cooling_load = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Peak Cooling Load [kWh]", "class":"form-control"}), label="")
+	reporting_interval = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Reporting Interval", "class":"form-control"}), label="")
+	cooling_setpoint = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Cooling Setpoint", "class":"form-control"}), label="")
+	cooling_schedule_type = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Cooling Schedule Type", "class":"form-control"}), label="")
+	system_cop = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"System COP", "class":"form-control"}), label="")
+	operation_schedule_type = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Operation Schedule Type", "class":"form-control"}), label="")
+	lighting_energy = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Lighting Energy [kWh]", "class":"form-control"}), label="")
+	equipment_energy = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "Equipment Energy [kWh]", "class":"form-control"}), label="")
+	envelope_properties = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "Envelope Properties", "class":"form-control"}), label="")
+	eui = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "EUI [kWh/m²/Year]", "class":"form-control"}), label="")
 
 	class Meta:
 		model = Record

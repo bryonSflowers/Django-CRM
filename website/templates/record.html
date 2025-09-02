@@ -5,37 +5,52 @@
 
 <div class="card">
   <div class="card-header"><strong>
-    	{{ customer_record.first_name }} 
-		{{ customer_record.last_name }}</strong>
+    	{{ simulation_record.simulation_name }} 
+		{{ simulation_record.weatherfile_name }}</strong>
   </div>
   <div class="card-body">
 
 
 
 <p class="card-text">
-<strong>Email: </strong>{{ customer_record.email }}</p>
+<strong>Run Period: </strong>{{ simulation_record.run_period }}</p>
 
 <p class="card-text">
-<strong>Phone: </strong>{{ customer_record.phone }}
-</p>
+<strong>Total Cooling Energy [kWh]: </strong>{{ simulation_record.total_cooling_energy }}</p>
 
 <p class="card-text">
-<strong>Address: </strong>{{ customer_record.address }}</p>
+<strong>Peak Cooling Load [kWh]: </strong>{{ simulation_record.peak_cooling_load }}</p>
 
 <p class="card-text">
-<strong>City: </strong>{{ customer_record.city }}</p>
+<strong>Reporting Interval: </strong>{{ simulation_record.reporting_interval }}</p>
 
 <p class="card-text">
-<strong>State: </strong>{{ customer_record.state }}</p>
+<strong>Cooling Setpoint [°C]: </strong>{{ simulation_record.cooling_setpoint }}</p>
 
 <p class="card-text">
-<strong>Zipcode: </strong>{{ customer_record.zipcode }}</p>
+<strong>Cooling Schedule Type: </strong>{{ simulation_record.cooling_schedule_type }}</p>
 
 <p class="card-text">
-<strong>Create At: </strong>{{ customer_record.created_at }}</p>
+<strong>System COP: </strong>{{ simulation_record.system_cop }}</p>
 
 <p class="card-text">
-<strong>ID: </strong>{{ customer_record.id }}</p>
+<strong>Operation Schedule/Type: </strong>{{ simulation_record.operation_schedule_type }}</p>
+
+<p class="card-text">
+<strong>Lighting Energy [kWh]: </strong>{{ simulation_record.lighting_energy }}</p>
+
+<p class="card-text">
+<strong>Equipment Energy [kWh]: </strong>{{ simulation_record.equipment_energy }}</p>
+
+<p class="card-text">
+<strong>Envelope Properties: </strong>{{ simulation_record.envelope_properties }}</p>
+
+<p class="card-text">
+<strong>EUI [kWh/m²/Year]: </strong>{{ simulation_record.eui }}</p>
+
+
+<p class="card-text">
+<strong>ID: </strong>{{ simulation_record.id }}</p>
     
     
   </div>
@@ -43,7 +58,7 @@
 
 <br/><br/>
 <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
-<a href="{% url 'delete_record' customer_record.id %}" class="btn btn-danger">Delete</a>
-<a href="{% url 'update_record' customer_record.id %}" class="btn btn-secondary">Update Record</a>
+<a href="{% url 'delete_simulation' simulation_record.id %}" class="btn btn-danger">Delete</a>
+<a href="{% url 'update_simulation' simulation_record.id %}" class="btn btn-secondary">Update Simulation</a>
 
 {% endblock %}
